@@ -1,0 +1,52 @@
+#boarder{
+    display:grid;
+    background-color:gray;
+    border: 5px solid black;
+    width:420px;
+    height:420px;
+    grid-template-columns: repeat(20,20px);
+    grid-template-rows: repeat(20,20px);
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+#container{
+    display: grid;
+    justify-content: center;
+}
+
+#start-btn{
+    border:none;
+    border-radius: 25px;
+    width: 35vw;
+    height: 7vh;
+    max-width: 200px;
+    align-self: stretch;
+    font-size: large;
+}
+
+#container-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.snake{
+    background-color: brown;
+    color: brown;
+}
+
+html ,body{
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+}
