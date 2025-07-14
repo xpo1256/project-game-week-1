@@ -147,3 +147,20 @@ html ,body{
     top: -235px;
     left: 100px;
 }
+
+.hiddenbtn {
+    display: none !important;
+}
+
+.note{
+    position: relative;
+    margin-top: 15px;
+    left: 100px;
+    width: 190px;
+    height: 35px;
+    color: black;
+    background-color: gray;
+    border: darkgreen 3px solid;
+    border-radius: 15px;
+    padding:5px;
+}

@@ -4,12 +4,16 @@ let way = {x:0 , y:0};
 let ate = {x:Math.floor(Math.random()*20), y:Math.floor(Math.random()*20)};
 let score = document.querySelector(".score");
 let reset = document.getElementById("reset-btn");
+reset.classList.add("hiddenbtn")
 let time = document.querySelector(".timer");
-let rem = 300;
+let soundwin = new Audio("./sounds/preview-2.mp3");
+let soundlose = new Audio("./sounds/losing-horn-313723.mp3");
+let note = document.querySelector(".note");
+let rem = 10;
 let isRun = true;
 let showover = false;
 let isWin = false;
-let game; 
+let game;           
 let timerInterval;
 
 document.addEventListener("keyup", function control(happen){
@@ -19,6 +23,8 @@ document.addEventListener("keyup", function control(happen){
             timerInterval = setInterval(timing,1000)
         }
         isRun= true;
+        reset.classList.remove("hiddenbtn");
+        note.classList.add("hiddenbtn");
     }
 
     if(happen.key === "ArrowUp" && way.y !== 1  && isRun === true){
@@ -44,12 +50,13 @@ reset.addEventListener("click",function(){
         showover = false;
         isWin = false;
         isRun = false;
-        rem =300;
-        time.innerHTML = "5:00";
+        rem =60;
+        time.innerHTML = "0:10";
         clearInterval(timerInterval);
         timerInterval = null;
         const card =document.querySelector(".GameOver");
-    
+        reset.classList.add("hiddenbtn");
+        note.classList.remove("hiddenbtn");
         if(card){
             card.remove();
         }
@@ -66,7 +73,7 @@ function littleSnake(){
     border.innerHTML=""
     for(let i = 0 ; i< 400;i++){
         const block = document.createElement("div");
-        block.className = "block";
+        block.classList = "block";
         let x = i % 20 ;
         let y = Math.floor(i/20);
         for(let j = 0; j <bornSnake.length ; j++){
@@ -99,7 +106,7 @@ function movingSnake(){
     }
 }
 function gameOver(){
-
+    
     if(bornSnake[0].x < 0){
         isRun = false;
     }else if(bornSnake[0].x >= 20){
@@ -113,6 +120,7 @@ function gameOver(){
     for(let i = 1 ; i<bornSnake.length ; i+=1){
         if(bornSnake[i].x === bornSnake [0].x && bornSnake[i].y === bornSnake[0].y){
             isRun = false;
+            reset.classList.add("hiddenbtn");
         }
     }
     if(isRun === false && !showover){
@@ -121,7 +129,11 @@ function gameOver(){
         card.innerText= "Game Over!";
         border.appendChild(card);
         showover = true;
+        soundlose.volume = 0.5;
+        soundlose.play();
+        reset.classList.remove("hiddenbtn");
     }
+
 }
 
 function timing(){
@@ -136,11 +148,12 @@ function timing(){
                 showSec = sec;
             }
             time.innerHTML = `${min}:${showSec}`;
-            rem--;
+            
         }
     }else if(rem <0){
         isRun = false;
     }
+    rem--;
 }
 
 function checkFood(){
@@ -154,18 +167,30 @@ function checkFood(){
 
 function uWin()
 {
-        if(time.innerHTML === `0:00`){
+        if(time.innerHTML === `0:00` && isWin === false){
             isWin =true;
       let win = document.createElement("div");
         win.className = "win";
         win.innerHTML = "🥳 congrates you win 🥳";
         border.appendChild(win);
+        soundwin.volume = 0.5;
+        soundwin.play();
+        reset.classList.remove("hiddenbtn")
     }
 }
+
+function showbtn(){
+    
+    if(isRun === true ){
+        reset.classList.remove("hiddenbtn");
+    }
+}
+
  game = setInterval(function(){
     if(isRun === true && isWin === false){
        littleSnake(),movingSnake(),gameOver(),uWin();
     }else{
+        showbtn();
         clearInterval(game);
     }
   
