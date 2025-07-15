@@ -69,12 +69,17 @@ let score = document.querySelector(".score");
 let reset = document.getElementById("reset-btn");
 let time = document.querySelector(".timer");
 let note = document.querySelector(".note");
+let speed = document.querySelector(".btnspeed");
+let slow = document.querySelector(".btnslow");
 let rem = 10;
 let isRun = true;
 let showover = false;
 let isWin = false;
 let game;
 let timerInterval;
+let numspeed = 200;
+let designspeed = 1;
+let designslow = 1;
 ```
  ***rem timer value in sec***
  ***isRun determin whether game is running or not***
@@ -129,6 +134,41 @@ reset.addEventListener("click", function() {
 });
 ```
 *** that code reset all var and timer the whole game**
+
+```js
+speed.addEventListener("click", ()=>{
+     numspeed = numspeed - 10;
+     clearInterval(game);
+        designspeed = designspeed + 1;
+        speed.innerHTML = `Speed x${designspeed}`;
+     game = setInterval(()=>{
+        if(isRun === true){
+            movingSnake();
+            littleSnake();
+            gameOver();
+            uWin();
+        }
+     }, numspeed)
+})
+```
+***That code for increase speed of snake***
+
+```js
+slow.addEventListener('click',()=>{
+    numspeed = numspeed + 10;
+    clearInterval(game);
+    designslow = designslow + 1; 
+    slow.innerHTML = `Slow x${designslow}`;
+    game = setInterval(()=>{
+            movingSnake();
+            littleSnake();
+            gameOver();
+            uWin();
+    },numspeed)
+})
+```
+
+***That code for decrease speed of snake***
 
 ```js
 function littleSnake() {
@@ -254,7 +294,7 @@ game = setInterval(() => {
     gameOver();
     uWin();
   }
-}, 200);
+}, numspeed);
 ```
 *** first function for changing background**
 **the second function for running the code every 2 second**
