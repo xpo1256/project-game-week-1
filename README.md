@@ -269,3 +269,10 @@ game = setInterval(() => {
 <img src="image-2.png" style="width: 400px; height: 400px; border-radius:10px; border:solid black 2px;">
 
 # 3 showing lose message feature
+<img src="image-3.png" style="width: 400px; height: 400px; border-radius:10px; border:solid black 2px;">
+
+# 4 showing drawer feature
+<img src="image-4.png" style="width: 400px; height: 400px; border-radius:10px; border:solid black 2px;">
+
+# 5 after changing the background
+<img src="image-5.png" style="width: 400px; height: 400px; border-radius:10px; border:solid black 2px;">
