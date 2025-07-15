@@ -137,3 +137,28 @@ html, body {
   border-radius: 15px;
   z-index: 1000;
 }
+
+.btnspeed{
+    position: relative;
+    height: 30px;
+    border: black 1px;
+    border-radius: 10px;
+    color: black;
+    font-size: medium;
+    top: 10px;
+    left: 175px;
+    cursor: pointer;
+}
+
+.btnspeed :hover{
+    position: relative;
+    height: 30px;
+    border: black 1px;
+    border-radius: 10px;
+    color: black;
+    font-size: medium;
+    top: 10px;
+    left: 175px;
+    cursor: pointer;
+    background-color: #333;
+}

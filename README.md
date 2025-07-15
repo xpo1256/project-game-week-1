@@ -61,20 +61,20 @@ let bornSnake = [{x:Math.floor(Math.random(*20),y:Math.floor())}]
 ***way that control direction for the snake***
 *** ate gives random position by using Math.random**
 ```js
-***let border = document.getElementById('border');***
-***let bornSnake = [{x: Math.floor(Math.random()*20), y: ***Math.floor(Math.random()*20)}];
-***let way = {x:0 , y:0};***
-***let ate = {x: Math.floor(Math.random()*20), y: Math.floor(Math.random()*20)};***
-***let score = document.querySelector(".score");***
-***let reset = document.getElementById("reset-btn");***
-***let time = document.querySelector(".timer");***
-***let note = document.querySelector(".note");***
-***let rem = 10;***
-***let isRun = true;***
-***let showover = false;***
-***let isWin = false;***
-***let game;***
-***let timerInterval;***
+let border = document.getElementById('border');
+let bornSnake = [{x: Math.floor(Math.random()*20), y: Math.floor(Math.random()*20)}];
+let way = {x:0 , y:0};
+let ate = {x: Math.floor(Math.random()*20), y: Math.floor(Math.random()*20)};
+let score = document.querySelector(".score");
+let reset = document.getElementById("reset-btn");
+let time = document.querySelector(".timer");
+let note = document.querySelector(".note");
+let rem = 10;
+let isRun = true;
+let showover = false;
+let isWin = false;
+let game;
+let timerInterval;
 ```
  ***rem timer value in sec***
  ***isRun determin whether game is running or not***

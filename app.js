@@ -6,12 +6,30 @@ let score = document.querySelector(".score");
 let reset = document.getElementById("reset-btn");
 let time = document.querySelector(".timer");
 let note = document.querySelector(".note");
+let speed = document.querySelector(".btnspeed");
 let rem = 10;
 let isRun = true;
 let showover = false;
 let isWin = false;
 let game;
 let timerInterval;
+let numspeed = 200;
+let designspeed = 1;
+
+speed.addEventListener("click", ()=>{
+     numspeed = numspeed - 10;
+     clearInterval(game);
+        designspeed = designspeed + 1;
+        speed.innerHTML = `Speed x${designspeed}`;
+     game = setInterval(()=>{
+        if(isRun === true){
+            movingSnake();
+            littleSnake();
+            gameOver();
+            uWin();
+        }
+     }, numspeed)
+})
 
 reset.classList.add("hiddenbtn");
 
@@ -39,6 +57,8 @@ reset.addEventListener("click", function() {
   showover = false;
   isWin = false;
   isRun = false;
+  numspeed = 200;
+  designspeed = 1;
   rem = 10;
   time.innerHTML = "0:10";
   clearInterval(timerInterval);
@@ -150,6 +170,7 @@ document.querySelectorAll(".image-options img").forEach(img => {
 littleSnake();  // Draw initial state
 
 // Start the game loop but don't move snake until key pressed
+console.log(numspeed);
 game = setInterval(() => {
   if (isRun) {
     movingSnake();
@@ -157,4 +178,4 @@ game = setInterval(() => {
     gameOver();
     uWin();
   }
-}, 200);
+},numspeed);
