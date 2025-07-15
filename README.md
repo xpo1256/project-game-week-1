@@ -31,25 +31,23 @@
 **The user interface is clear and uncomplicated**
 
 ## all Features have been add for the Game : 
-1- background Changeable 
-2- timer make more challenges for the user
-3- showes all messages for the user if he win or lose
-4- when the user eat food increase the size of the snake
-5- when the user eat food the score also increase by 1 point
-6- modren ui/ux 
-7- border containes 400 div styled by grid
-8- the snake generated randomely 
-9- the food generated randomely
+1- background Changeable\
+2- timer make more challenges for the user\
+3- showes all messages for the user if he win or lose\
+4- when the user eat food increase the size of the snake\
+5- when the user eat food the score also increase by 1 point\
+6- modren ui/ux\
+7- border containes 400 div styled by grid\
+8- the snake generated randomely\
+9- the food generated randomely \
 10- adding drawer that containes button for each background
 
 
 ## How To play Game
-1- open live server 
-2- press any kind of arrow keys at keyboard that will move the snake 
-3- try to eat many food as u can to get best score
-4- survive until the countdown finish to win the game 
-
-### 1. Download Or Clone The Repository
+1- open live server\
+2- press any kind of arrow keys at keyboard that will move the snake\
+3- try to eat many food as u can to get best score\
+4- survive until the countdown finish to win the game
 
 # Code Explaination 
 
