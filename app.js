@@ -7,6 +7,7 @@ let reset = document.getElementById("reset-btn");
 let time = document.querySelector(".timer");
 let note = document.querySelector(".note");
 let speed = document.querySelector(".btnspeed");
+let slow = document.querySelector(".btnslow");
 let rem = 10;
 let isRun = true;
 let showover = false;
@@ -15,6 +16,7 @@ let game;
 let timerInterval;
 let numspeed = 200;
 let designspeed = 1;
+let designslow = 1;
 
 speed.addEventListener("click", ()=>{
      numspeed = numspeed - 10;
@@ -29,6 +31,19 @@ speed.addEventListener("click", ()=>{
             uWin();
         }
      }, numspeed)
+})
+
+slow.addEventListener('click',()=>{
+    numspeed = numspeed + 10;
+    clearInterval(game);
+    designslow = designslow + 1; 
+    slow.innerHTML = `Slow x${designslow}`;
+    game = setInterval(()=>{
+            movingSnake();
+            littleSnake();
+            gameOver();
+            uWin();
+    },numspeed)
 })
 
 reset.classList.add("hiddenbtn");
@@ -54,11 +69,14 @@ reset.addEventListener("click", function() {
   bornSnake = [{x: Math.floor(Math.random()*20), y: Math.floor(Math.random()*20)}];
   way = {x:0 , y:0};
   score.innerHTML = "Score: 0";
+  slow.innerHTML = "Slow x1";
+  speed.innerHTML = "Speed x1";  
   showover = false;
   isWin = false;
   isRun = false;
   numspeed = 200;
   designspeed = 1;
+  designslow = 1;
   rem = 10;
   time.innerHTML = "0:10";
   clearInterval(timerInterval);
