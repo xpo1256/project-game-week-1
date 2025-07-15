@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="app.js"></script>
-    <link href="style.css" rel="stylesheet">
-    <link rel="icon" href="icon-snake-game.png">
-    <title>Snake Game</title>
-    
-    <div id="title"><h1>Snake Game</h1>
-        <button class="drawerBtn"><img class="drawerImage" src="image copy.png"></button>
-    </div>
-    <div class="content-bar"><h1 class="score">Score: 0</h1>
-    <h1 class="timer">0:10</h1></div>
-    
-    <div id="container">
-
-        <div id="border">
-            <div class="snake"></div>
-            <div class="food"></div>
-        </div>
-        <div class="note">Press any Arrow to Start the Game</div>
-        <div id="container-btn"><button id="reset-btn" class="hidebtn">Play Again</button></div>
-        <button class="back-sun"></button>
-    </div>
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icon-snake-game.png" />
+  <script defer src="app.js"></script>
 </head>
 <body>
-    
+  <!-- Drawer Toggle Button -->
+  <button class="drawerBtn" id="toggleDrawer">☰</button>
+
+  <!-- Drawer Panel -->
+  <div id="drawer" class="drawer hiddenbtn">
+    <h3>Select Background</h3>
+    <div class="image-options">
+     <img src="image.png" data-bg="image copy 4.png" alt="Background 3" />
+      <img src="image copy 2.png" data-bg="image copy 2.png" alt="Background 1" />
+      <img src="image copy 3.png" data-bg="image copy 3.png" alt="Background 2" />
+      <img src="image copy 4.png" data-bg="image copy 4.png" alt="Background 3" />
+    </div>
+  </div>
+
+  <!-- Game Container -->
+  <div id="container">
+    <div id="game-wrapper">
+      <div id="title">Snake Game</div>
+      <div class="content-bar">
+        <div class="score">Score: 0</div>
+        <div class="timer">0:10</div>
+      </div>
+      <div id="border"></div>
+      <div id="container-btn">
+        <button id="reset-btn">Reset</button>
+      </div>
+      <div class="note">Press any arrow key to start</div>
+    </div>
+  </div>
 </body>
 </html>

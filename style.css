@@ -1,189 +1,127 @@
-#border{
-    display:grid;
-    border: 5px solid rgb(73, 136, 71);
-    width:402px;
-    height: 402px;
-    grid-template-columns: repeat(20,20px);
-    grid-template-rows: repeat(20,20px);
-    aspect-ratio: 1/1;
-    border-radius: 15px;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url("image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-#title{
-    display: flex;
-    justify-content: center;
-    margin: 15px;
-    background-color:rgba(115, 121, 144, 0.4);
-    margin: 0px 0px 0px;
-    align-items: center;
-    height: 80px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: white;
+#container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 
-#container{
-    display: grid;
-    justify-content: center;
+#game-wrapper {
+  text-align: center;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
 }
 
-#reset-btn{
-    border:none;
-    border-radius: 25px;
-    width: 35vw;
-    height: 7vh;
-    max-width: 150px;
-    align-self: stretch;
-    font-size: larger;
+#title {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
 }
 
-#container-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+.content-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: white;
 }
 
-
-.snake{
-    background-color: lightgreen;
-    width: 20px;
-    height: 20px;
-    color: lightgreen;
-    border: black solid 1px;
+.score, .timer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
-html ,body{
-    overflow: hidden;
-    height: 100%;
-    margin: 0;
-    background-image: url(image.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+#border {
+  display: grid;
+  width: 402px;
+  height: 402px;
+  grid-template-columns: repeat(20, 20px);
+  grid-template-rows: repeat(20, 20px);
+  border: 5px solid green;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.block {
+  background-color: grey;
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+}
+
+.snake {
+  background-color: lightgreen;
 }
 
 .food {
-    background-color: red;
-    width: 20px;
-    height: 20px;
-    color: red;
-    border: black solid 1px;
+  background-color: red;
 }
 
-.score{
-    display:flex;
-    justify-content: center;
-    border: white solid;
-    border-radius: 15px;
-    max-width: 125px;
-    color: white;
-    padding:5px;
-}
-.over{
-    display:flex;
-    width: 150px;
-    height: 150px;
-    border-radius: 15px;
-    border: solid;
-    background:whitesmoke;
-    
-}
-
-#reset-btn:hover{
-    border: solid 2px rgb(99, 141, 203);
-}
-#reset-btn:active{
-    background-color: rgb(114, 114, 114);
-}
-.block{
-    background-color: grey;
-    width: 20px;
-    height: 20px;
-    border: solid 1px black;
-    
-}
-
-.GameOver{
-    position:relative;
-    width: 100px;
-    height: 30px;
-    border-radius: 15px;
-    border: none;
-    color: black;
-    font-size: large;
-    text-align: center;
-    background-color: rgb(193, 193, 193);       
-    padding: 10px;
-    border: solid darkgreen;
-    top: -250px;
-    left: 139px;
-}
-
-.timer{
-    display:flex;
-    margin-right: 35px;
-    justify-content: center;  
-    color: white;
-    border: solid white 3px;
-    border-radius: 15px;
-    padding: 5px;
-}
-.content-bar{
-    display: flex;
-    justify-content: space-around;
-}
-.win{
-    position:relative;
-    width: 190px;
-    height: 35px;
-    border-radius: 15px;
-    border: none;
-    color: black;
-    font-size: large;
-    text-align: center;
-    background-color: rgb(193, 193, 193);       
-    padding: 10px;
-    border: solid darkgreen;
-    top: -235px;
-    left: 100px;
+#reset-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
 }
 
 .hiddenbtn {
-    display: none !important;
+  display: none !important;
 }
 
-.note{
-    position: relative;
-    margin-top: 15px;
-    left: 100px;
-    width: 190px;
-    height: 35px;
-    color: black;
-    background-color: gray;
-    border: darkgreen 3px solid;
-    border-radius: 15px;
-    padding:5px;
+.note {
+  color: white;
+  margin-top: 10px;
 }
-.drawerBtn{
-    display: flex;
-    position: relative;
-    width:45px;
-    height: 45px;
-    border-radius: 15px;
-    border: none;
-    right: -210px;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
+
+/* Drawer */
+.drawerBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  z-index: 10;
 }
-.drawerImage{   
-    display: flex;
-    width:40px;
-    height: 40px;
-    border-radius: 15px;
-    align-content: center;
-    justify-content: center;
+
+.drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  background-color: rgba(255,255,255,0.9);
+  padding: 20px;
+  z-index: 9;
 }
-.detailDrawer{
-    height: 100vh;
+
+.image-options img {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.GameOver, .win {
+  position: relative;
+  margin-top: 10px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
 }
