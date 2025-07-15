@@ -9,6 +9,7 @@ let time = document.querySelector(".timer");
 let soundwin = new Audio("./sounds/preview-2.mp3");
 let soundlose = new Audio("./sounds/losing-horn-313723.mp3");
 let note = document.querySelector(".note");
+let btnDrawer = document.querySelector(".drawerBtn");
 let rem = 10;
 let isRun = true;
 let showover = false;
@@ -68,6 +69,10 @@ reset.addEventListener("click",function(){
             }
         },200)
 });
+
+btnDrawer.addEventListener("click" ,()=>{
+      btnDrawer.className = "";
+})
 
 function littleSnake(){
     border.innerHTML=""

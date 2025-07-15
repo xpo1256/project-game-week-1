@@ -164,3 +164,26 @@ html ,body{
     border-radius: 15px;
     padding:5px;
 }
+.drawerBtn{
+    display: flex;
+    position: relative;
+    width:45px;
+    height: 45px;
+    border-radius: 15px;
+    border: none;
+    right: -210px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+.drawerImage{   
+    display: flex;
+    width:40px;
+    height: 40px;
+    border-radius: 15px;
+    align-content: center;
+    justify-content: center;
+}
+.detailDrawer{
+    height: 100vh;
+}
