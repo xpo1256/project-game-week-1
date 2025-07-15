@@ -52,14 +52,15 @@
 # Code Explaination 
 
 ## Variables and const
-**let border = documement.getElementById("border");**
-**let bornSnake = [{x:Math.floor(Math.random(*20),y:Math.floor())}]**
-
+```js
+let border = documement.getElementById("border");
+let bornSnake = [{x:Math.floor(Math.random(*20),y:Math.floor())}]
+```
 ***border it is where the snake move that contain 20*20 div grid area**
 ***bornSnake it is array contain each parts of snake [x: 10, y:10];***
 ***way that control direction for the snake***
 *** ate gives random position by using Math.random**
-
+```js
 ***let border = document.getElementById('border');***
 ***let bornSnake = [{x: Math.floor(Math.random()*20), y: ***Math.floor(Math.random()*20)}];
 ***let way = {x:0 , y:0};***
@@ -74,7 +75,7 @@
 ***let isWin = false;***
 ***let game;***
 ***let timerInterval;***
- 
+```
  ***rem timer value in sec***
  ***isRun determin whether game is running or not***
  ***showover,isWin that check if the user win or not to show their messages***
