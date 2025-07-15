@@ -101,7 +101,7 @@ function gameOver() {
     let card = document.createElement("div");
     card.className = "GameOver";
     card.innerText = "Game Over!";
-    border.appendChild(card);
+    document.body.appendChild(card);
     showover = true;
     reset.classList.remove("hiddenbtn");
   }
@@ -128,7 +128,7 @@ function uWin() {
     let win = document.createElement("div");
     win.className = "win";
     win.innerHTML = "🥳 You Win!";
-    border.appendChild(win);
+    document.body.appendChild(win);
     reset.classList.remove("hiddenbtn");
   }
 }

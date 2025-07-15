@@ -125,3 +125,15 @@ html, body {
   padding: 10px;
   font-weight: bold;
 }
+.GameOver, .win {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: red;
+  background: rgba(255,255,255,0.8);
+  padding: 20px 40px;
+  border-radius: 15px;
+  z-index: 1000;
+}
