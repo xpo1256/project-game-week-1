@@ -145,8 +145,8 @@ html, body {
     border-radius: 10px;
     color: black;
     font-size: medium;
-    top: 10px;
-    left: 210px;
+    top: 11px;
+    left: 212px;
     cursor: pointer;
 }
 
@@ -170,4 +170,18 @@ html, body {
 .btnslow:hover{
     cursor: pointer;
     background-color: #6f6f6f;
+}
+
+.best{
+    display: flex;
+    position: relative;
+    background-color: rgb(188, 188, 188);
+    font-size: medium;
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 10px;
+    left: 150px;
+    bottom: -42px;
 }

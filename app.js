@@ -8,6 +8,9 @@ let time = document.querySelector(".timer");
 let note = document.querySelector(".note");
 let speed = document.querySelector(".btnspeed");
 let slow = document.querySelector(".btnslow");
+let bestEle = document.querySelector(".best");
+let bestScore = parseInt(localStorage.getItem("best")) || 0;
+let currentScore = 0;
 let rem = 10;
 let isRun = true;
 let showover = false;
@@ -17,6 +20,17 @@ let timerInterval;
 let numspeed = 200;
 let designspeed = 1;
 let designslow = 1;
+bestEle.innerHTML = `Best Score : ${bestScore}`;
+
+function updateScore(){
+    let value = parseInt(score.innerText.split(":")[1]) || 0;
+    currentScore = value;
+    if(currentScore >bestScore){
+        bestScore = currentScore;
+        localStorage.setItem("best", bestScore);
+        bestScore.innerHTML = `Best Score :${bestScore}`;
+    }
+}
 
 speed.addEventListener("click", ()=>{
      numspeed = numspeed - 10;
@@ -119,6 +133,7 @@ function movingSnake() {
     ate = {x: Math.floor(Math.random()*20), y: Math.floor(Math.random()*20)};
     let value = parseInt(score.innerText.split(":")[1] || 0);
     score.textContent = `Score: ${value + 1}`;
+    updateScore();
   } else {
     bornSnake.pop();
   }
