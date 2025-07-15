@@ -315,3 +315,6 @@ game = setInterval(() => {
 
 # 5 after changing the background
 <img src="image-5.png" style="width: 400px; height: 400px; border-radius:10px; border:solid black 2px;">
+
+# 6 after adding speed and slow button for snake speed 
+<img src="image-6.png" style="width: 400px; height: 400px; border-radius:10px; border:solid black 2px;">
