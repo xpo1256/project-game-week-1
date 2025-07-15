@@ -1,5 +1,5 @@
-# Sneak
-
+<h1 style="text-align:center;">Snake Game</h1>
+<br>
 
 # Decription 
 
