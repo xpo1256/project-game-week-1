@@ -9,9 +9,11 @@ let note = document.querySelector(".note");
 let speed = document.querySelector(".btnspeed");
 let slow = document.querySelector(".btnslow");
 let bestEle = document.querySelector(".best");
+let timerline = document.querySelector(".line-time");
 let bestScore = parseInt(localStorage.getItem("best")) || 0;
 let currentScore = 0;
-let rem = 10;
+let totaltime = 10;
+let rem = totaltime;
 let isRun = true;
 let showover = false;
 let isWin = false;
@@ -70,6 +72,7 @@ document.addEventListener("keyup", function(e) {
     isRun = true;
     reset.classList.remove("hiddenbtn");
     note.classList.add("hiddenbtn");
+    timerline.style.display = "block";
   }
 
   if (e.key === "ArrowUp" && way.y !== 1 && isRun) way = {x:0,y:-1};
@@ -92,6 +95,8 @@ reset.addEventListener("click", function() {
   designspeed = 1;
   designslow = 1;
   rem = 10;
+  timerline.style.display = "none";
+  timerline.style.width = "0%";
   time.innerHTML = "0:10";
   clearInterval(timerInterval);
   timerInterval = null;
@@ -165,7 +170,10 @@ function timing() {
     let min = Math.floor(rem / 60);
     let sec = rem % 60;
     time.innerHTML = `${min}:${sec < 10 ? '0' + sec : sec}`;
-    rem--;
+    
+      let percent = ((totaltime - rem)/totaltime)*100;
+      timerline.style.width = percent + "%";
+      rem--;
   } else {
     isRun = false;
   }
