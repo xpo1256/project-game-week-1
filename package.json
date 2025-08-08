@@ -1,11 +1,11 @@
 {
+  "name": "snake-game",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "react-scripts": "^5.0.1"
-  },
-  "scripts": {
-    "build": "react-scripts build"
   }
 }
